@@ -66,7 +66,7 @@ const Dashboard = () => {
                         <img src={cate.image} alt={cate.name} className="w-6 h-6 mr-2 object-cover" />
                         {cate.name}
                     </div>
-                ).toString(): (
+                ): (
                     ""
                 )
             };

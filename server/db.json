@@ -13,13 +13,6 @@
       "email": "quynhph@gmail.com",
       "password": "user1234",
       "role": "user"
-    },
-    {
-      "id": 1760201977889,
-      "fullName": "RIK000207",
-      "email": "quynh@gmail.com",
-      "password": "user5678",
-      "role": "user"
     }
   ],
   "categories": [
@@ -530,7 +523,7 @@
           ]
         }
       ],
-      "plays": 0
+      "plays": 1
     },
     {
       "title": "hook useParams",
@@ -591,7 +584,7 @@
           ]
         }
       ],
-      "plays": 0,
+      "plays": 2,
       "id": 7
     },
     {
@@ -1383,6 +1376,1326 @@
       ],
       "plays": 0,
       "id": 8
+    },
+    {
+      "title": "Java GUI Advanced Quiz",
+      "categoryId": 4,
+      "duration": 90,
+      "questionCount": 30,
+      "questionsDetail": [
+        {
+          "id": 1,
+          "question": "Phương thức setVisible() trong JFrame dùng để làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Hiển thị hoặc ẩn cửa sổ",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Đặt kích thước cửa sổ",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Thêm component",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Đóng cửa sổ",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "question": "setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE) làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Kết thúc ứng dụng khi đóng cửa sổ",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Ẩn cửa sổ khi đóng",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Khóa cửa sổ",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không làm gì",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "question": "JPanel thuộc loại container nào?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Intermediate container",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Top-level container",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Special-purpose container",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không phải container",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "question": "Phương thức add() dùng để làm gì trong GUI?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Thêm component vào container",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Đặt kích thước",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Hiển thị component",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Xóa component",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "question": "BorderLayout có bao nhiêu khu vực mặc định?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "5 khu vực",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "3 khu vực",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "4 khu vực",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "6 khu vực",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "question": "FlowLayout sắp xếp component như thế nào?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Theo dòng từ trái sang phải",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Theo lưới cố định",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Theo vòng tròn",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Theo chiều dọc",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "question": "JButton là thành phần nào trong Swing?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Component điều khiển",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Container",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Top-level container",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không phải component",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "question": "ActionListener dùng để làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Xử lý sự kiện khi nhấn nút",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Hiển thị giao diện",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Định dạng giao diện",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Thêm component",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "question": "JTextField dùng để làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Nhập và hiển thị văn bản đơn",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Hiển thị hình ảnh",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Tạo nút",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Chứa container",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "question": "JLabel dùng để làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Hiển thị văn bản hoặc hình ảnh tĩnh",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Nhập dữ liệu",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Tạo nút",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Quản lý container",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 11,
+          "question": "JCheckBox dùng để làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Cho phép chọn nhiều lựa chọn",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Chỉ chọn một lựa chọn",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Hiển thị văn bản",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Tạo container",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "question": "JRadioButton thuộc nhóm nào?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "ButtonGroup",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "ContainerGroup",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "ActionGroup",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không thuộc nhóm",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "question": "JComboBox dùng để làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Hiển thị danh sách thả xuống",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Tạo nút",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Hiển thị hình ảnh",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Quản lý container",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 14,
+          "question": "JScrollPane dùng để làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Cung cấp thanh cuộn cho component lớn",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Tạo cửa sổ",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Hiển thị văn bản",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Thêm nút",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 15,
+          "question": "Phương thức pack() trong JFrame làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Tự động điều chỉnh kích thước phù hợp với nội dung",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Ẩn cửa sổ",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Đóng cửa sổ",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Thêm component",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 16,
+          "question": "Event handling trong Swing dựa trên cơ chế nào?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Delegation Event Model",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Inheritance Model",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Direct Call Model",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Static Model",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 17,
+          "question": "Phương thức repaint() làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Cập nhật lại giao diện",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Thêm component",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Đóng cửa sổ",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Ẩn component",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 18,
+          "question": "JMenuBar thuộc thành phần nào?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Menu system",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Button system",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Text system",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Container system",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 19,
+          "question": "JDialog dùng để làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Tạo hộp thoại",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Tạo cửa sổ chính",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Thêm nút",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Hiển thị hình ảnh",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 20,
+          "question": "Phương thức setLayout() làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Định nghĩa cách sắp xếp component",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Thêm component",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Đóng container",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Hiển thị giao diện",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "question": "GridLayout sắp xếp component như thế nào?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Theo lưới đều nhau",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Theo dòng",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Theo biên",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Theo vòng tròn",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 22,
+          "question": "JTable dùng để làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Hiển thị dữ liệu dạng bảng",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Tạo nút",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Hiển thị văn bản",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Tạo hộp thoại",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "question": "Phương thức setSize() làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Đặt kích thước cho component",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Thêm component",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Hiển thị component",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Xóa component",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 24,
+          "question": "JProgressBar dùng để làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Hiển thị tiến trình công việc",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Tạo nút",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Nhập dữ liệu",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Tạo container",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 25,
+          "question": "Phương thức dispose() làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Giải phóng tài nguyên của cửa sổ",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Thêm component",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Hiển thị cửa sổ",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Đóng ứng dụng",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 26,
+          "question": "JToolBar dùng để làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Cung cấp thanh công cụ với các nút",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Hiển thị văn bản",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Tạo hộp thoại",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Quản lý container",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 27,
+          "question": "Phương thức setEnabled() làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Kích hoạt hoặc vô hiệu hóa component",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Thêm component",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Hiển thị component",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Đặt kích thước",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 28,
+          "question": "JList dùng để làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Hiển thị danh sách các mục chọn",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Tạo nút",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Hiển thị hình ảnh",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Tạo container",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 29,
+          "question": "Phương thức setTitle() trong JFrame làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Đặt tiêu đề cho cửa sổ",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Đặt kích thước",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Thêm component",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Hiển thị cửa sổ",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 30,
+          "question": "JTree dùng để làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Hiển thị dữ liệu dạng cây",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Tạo nút",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Hiển thị văn bản",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Tạo hộp thoại",
+              "correct": false
+            }
+          ]
+        }
+      ],
+      "plays": 0,
+      "id": 10
+    },
+    {
+      "title": "Java GUI Fundamentals Quiz",
+      "categoryId": 4,
+      "duration": 60,
+      "questionCount": 20,
+      "questionsDetail": [
+        {
+          "id": 1,
+          "question": "JFrame là gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Lớp dùng để tạo cửa sổ với Swing",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Lớp chỉ hiển thị văn bản",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Lớp không thuộc Swing",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Lớp dùng cho AWT",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "question": "AWT được giới thiệu trong phiên bản Java nào?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Java 1.1",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Java 1.0",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Java 2.0",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Java 8",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "question": "Swing được giới thiệu từ phiên bản Java nào?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Java 1.2",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Java 1.1",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Java 2.0",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Java 3.0",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "question": "Đặc tính chính của Swing là gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Các thành phần nhẹ và kiến trúc cắm quan",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Heavyweight components",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Phụ thuộc hoàn toàn vào hệ điều hành",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không hỗ trợ sự kiện",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "question": "Hạn chế của AWT là gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Chiếm nhiều tài nguyên hệ thống",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Hỗ trợ look-and-feel",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Nhẹ và dễ mở rộng",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không phụ thuộc vào hệ điều hành",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "question": "JFC gồm bao nhiêu phần chính?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "5 phần",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "3 phần",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "4 phần",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "6 phần",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "question": "Kiến trúc MVC của Swing chia thành bao nhiêu phần?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "3 phần",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "2 phần",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "4 phần",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "1 phần",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "question": "Model trong MVC của Swing là gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Phần chứa nội dung và trạng thái của GUI",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Thể hiện trực quan",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Quản lý sự kiện",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không tồn tại",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "question": "View trong MVC của Swing làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Thể hiện trực quan thành phần GUI",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Chứa dữ liệu",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Quản lý sự kiện",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Cập nhật model",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "question": "Controller trong MVC của Swing làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Quản lý tương tác giữa GUI và sự kiện người dùng",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Thể hiện trực quan",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Chứa dữ liệu",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không quan trọng",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 11,
+          "question": "AWT cung cấp bao nhiêu mô hình xử lý biến cố?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Hai mô hình",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Một mô hình",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Ba mô hình",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không có mô hình",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "question": "Ưu điểm chính của Swing so với AWT là gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Hỗ trợ pluggable look-and-feel",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Heavyweight components",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Phụ thuộc vào hệ điều hành",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không hỗ trợ sự kiện",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "question": "UI-delegate trong Swing làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Hiển thị thành phần và quản lý sự kiện",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Chỉ chứa dữ liệu",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Quản lý model",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không tồn tại",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 14,
+          "question": "Component trong GUI là gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Đối tượng có biểu diễn đồ họa và tương tác với người dùng",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Chỉ container",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Không tương tác",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Chỉ hiển thị",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 15,
+          "question": "Container dùng để làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Quản lý và nhóm các đối tượng khác",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Chỉ hiển thị",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Không chứa component",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Chỉ panel",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 16,
+          "question": "Panel là gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Khung chứa đơn giản để nhóm các thành phần",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Cửa sổ chính",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Hộp thoại",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Có thanh trượt",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 17,
+          "question": "Top-level component trong Swing là gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Thành phần trên cùng của hierarchy",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Intermediate containers",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Special-purpose containers",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không tồn tại",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 18,
+          "question": "Intermediate containers dùng để gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Chứa các component khác",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Làm cửa sổ chính",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Có chức năng đặc biệt",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không chứa component",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 19,
+          "question": "Cấu trúc JFrame bao gồm những lớp nào?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "glassPane, layeredPane, rootPane, contentPane",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Chỉ contentPane",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Không có glassPane",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Chỉ rootPane",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 20,
+          "question": "Các thành phần điều khiển cơ bản dùng để làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Nhận dữ liệu từ người dùng",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Chỉ hiển thị thông tin",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Chọn định dạng",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không tương tác",
+              "correct": false
+            }
+          ]
+        }
+      ],
+      "plays": 0,
+      "id": 9
     }
   ],
   "quizzes": [

@@ -1,3 +1,5 @@
+import type {JSX} from "react";
+
 export interface User {
     id: number;
     fullName: string;
@@ -21,7 +23,7 @@ export interface Quiz {
     plays: number;
     // categoryDisplay?: string
     // JSX.Element
-    categoryDisplay?: string;
+    categoryDisplay: string | JSX.Element;
 }
 
 export interface Category {

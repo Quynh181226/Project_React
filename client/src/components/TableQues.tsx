@@ -5,7 +5,7 @@ import type { Question } from "../types/type";
 import ModalAddEditQues from "./ModalAddEditQues";
 import ModalDeleteQues from "./ModalDeleteQues";
 import { Button } from "antd";
-import Pagination from "./Pagination.tsx";
+import Pagination1 from "./Pagination1.tsx";
 
 interface TableQuesProps {
     testId: number;
@@ -29,7 +29,7 @@ const TableQues = ({ testId, onEdit, onDelete, questions: questionsFromProp }: T
     const [selectedQues, setSelectedQues] = useState<Question | null>(null);
 
     const [currPage, setCurrPage] = useState(1);
-    const perPage=10;
+    const perPage=2;
 
     // Load danh sách câu hỏi khi testId thay đổi
     useEffect(() => {
@@ -153,7 +153,7 @@ const TableQues = ({ testId, onEdit, onDelete, questions: questionsFromProp }: T
             )}
 
             {totalPages > 1 &&
-                <Pagination currPage={currPage} totalPages={totalPages} onChangePage={(p)=>setCurrPage(p)}/>
+                <Pagination1 currPage={currPage} totalPages={totalPages} onChangePage={(p)=>setCurrPage(p)}/>
             }
         </div>
     );

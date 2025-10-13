@@ -24,7 +24,7 @@ const TableTest = ({ search, sort }: TableTestProps) => {
     const [selectedTest, setSelectedTest] = useState<TestDetail | undefined>(undefined);
 
     const [currPage, setCurrPage] = useState(1);
-    const perPage = 6;
+    const perPage = 5;
 
     useEffect(() => {
         dispatch(getAllTests());
@@ -61,11 +61,11 @@ const TableTest = ({ search, sort }: TableTestProps) => {
                 <thead>
                 <tr className="bg-gray-800 text-white">
                     <th className="px-4 py-2 border border-[#DEE2E6]">ID</th>
-                    <th className="px-4 py-2 border border-[#DEE2E6]">Tên bài test</th>
-                    <th className="px-4 py-2 border border-[#DEE2E6]">Danh mục</th>
-                    <th className="px-4 py-2 border border-[#DEE2E6]">Số câu hỏi</th>
-                    <th className="px-4 py-2 border border-[#DEE2E6]">Thời gian</th>
-                    <th className="px-4 py-2 border border-[#DEE2E6] text-center">Hành động</th>
+                    <th className="px-4 py-2 border border-[#DEE2E6]">Test name</th>
+                    <th className="px-4 py-2 border border-[#DEE2E6]">Category</th>
+                    <th className="px-4 py-2 border border-[#DEE2E6]">Number questions</th>
+                    <th className="px-4 py-2 border border-[#DEE2E6]">Time</th>
+                    <th className="px-4 py-2 border border-[#DEE2E6] text-center">Action</th>
                 </tr>
                 </thead>
                 <tbody>

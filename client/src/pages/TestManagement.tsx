@@ -6,7 +6,7 @@ import HandleLogout from "../components/handleLogout.tsx";
 
 import { useState } from "react";
 import {useNavigate} from "react-router-dom";
-import Footer1 from "../components/Footer1.tsx";
+import Footer from "../components/Footer.tsx";
 
 const TestManagement = () => {
     const navigate = useNavigate();
@@ -42,7 +42,7 @@ const TestManagement = () => {
                 <TableTest search={search} sort={sort} />
             </div>
 
-            <Footer1/>
+            <Footer/>
         </div>
     );
 };
