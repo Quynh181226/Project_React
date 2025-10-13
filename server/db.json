@@ -1,0 +1,1414 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fullName": "Admin",
+      "email": "admin@gmail.com",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": 1760001035665,
+      "fullName": "B24DTCN442",
+      "email": "quynhph@gmail.com",
+      "password": "user1234",
+      "role": "user"
+    },
+    {
+      "id": 1760201977889,
+      "fullName": "RIK000207",
+      "email": "quynh@gmail.com",
+      "password": "user5678",
+      "role": "user"
+    }
+  ],
+  "categories": [
+    {
+      "id": 2,
+      "name": "House1",
+      "image": "https://res.cloudinary.com/dtxlzevgb/image/upload/v1760032678/qahggz3lqzjlbgssnd3e.svg"
+    },
+    {
+      "id": 3,
+      "name": "Science",
+      "image": "https://res.cloudinary.com/dtxlzevgb/image/upload/v1760250199/lsjzy5qkir5aknowyh6h.svg"
+    },
+    {
+      "id": 4,
+      "name": "React",
+      "image": "https://res.cloudinary.com/dtxlzevgb/image/upload/v1760260506/kkfsmobszow9gweywqbf.png"
+    },
+    {
+      "id": 5,
+      "name": "Âm nhạc",
+      "image": "https://res.cloudinary.com/dtxlzevgb/image/upload/v1760250997/o92ij0qjkqhj3kzhuh91.png"
+    },
+    {
+      "name": "Check",
+      "image": "https://res.cloudinary.com/dtxlzevgb/image/upload/v1760319717/jedgswvu2ltu6oxxcez0.jpg",
+      "id": 7
+    },
+    {
+      "name": "Music",
+      "image": "https://res.cloudinary.com/dtxlzevgb/image/upload/v1760060312/mol5mwyxou5xverfudmx.svg",
+      "id": 8
+    },
+    {
+      "name": "Recipe book",
+      "image": "https://res.cloudinary.com/dtxlzevgb/image/upload/v1760260664/t92n6xguyoli7jzribiu.jpg",
+      "id": 9
+    }
+  ],
+  "tests": [
+    {
+      "title": "IELTS English Practice1",
+      "categoryId": 7,
+      "duration": 30,
+      "questionCount": 5,
+      "questionsDetail": [
+        {
+          "id": 1,
+          "question": "What is the correct form of the verb in this sentence: 'She ___ to the library every weekend.'?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "go",
+              "correct": false
+            },
+            {
+              "id": 2,
+              "text": "going",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "goes",
+              "correct": true
+            },
+            {
+              "id": 4,
+              "text": "gone",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "question": "Which word is a synonym for 'essential' in the context of academic writing?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Optional",
+              "correct": false
+            },
+            {
+              "id": 2,
+              "text": "Crucial",
+              "correct": true
+            },
+            {
+              "id": 3,
+              "text": "Minor",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Irrelevant",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "question": "Which phrase best completes this sentence: 'The lecture was so ___ that many students fell asleep.'?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "engaging",
+              "correct": false
+            },
+            {
+              "id": 2,
+              "text": "tedious",
+              "correct": true
+            },
+            {
+              "id": 3,
+              "text": "inspiring",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "lively",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "question": "Choose the correct preposition: 'She is very good ___ solving complex problems.'",
+          "answers": [
+            {
+              "id": 1,
+              "text": "on",
+              "correct": false
+            },
+            {
+              "id": 2,
+              "text": "at",
+              "correct": true
+            },
+            {
+              "id": 3,
+              "text": "in",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "with",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "question": "What does the word 'mitigate' mean in the context of environmental issues?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Worsen",
+              "correct": false
+            },
+            {
+              "id": 2,
+              "text": "Reduce",
+              "correct": true
+            },
+            {
+              "id": 3,
+              "text": "Ignore",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Cause",
+              "correct": false
+            }
+          ]
+        }
+      ],
+      "plays": 0,
+      "id": 4
+    },
+    {
+      "title": "TOEIC Practice Test 1",
+      "categoryId": 7,
+      "duration": 5,
+      "questionCount": 2,
+      "questionsDetail": [
+        {
+          "id": 1,
+          "question": "Petra Towers is located just ________ of the downtown area, close to a subway station.",
+          "answers": [
+            {
+              "id": 1,
+              "text": " across",
+              "correct": false
+            },
+            {
+              "id": 2,
+              "text": " away",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": " beyond",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": " outside",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "question": "______ otherwise stated, all course materials will be available at the campus bookstore two weeks before the first day of class.",
+          "answers": [
+            {
+              "id": 1,
+              "text": " Whereas",
+              "correct": false
+            },
+            {
+              "id": 2,
+              "text": " Unless",
+              "correct": true
+            },
+            {
+              "id": 3,
+              "text": "Still",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": " While",
+              "correct": false
+            }
+          ]
+        }
+      ],
+      "plays": 0,
+      "id": 5
+    },
+    {
+      "id": 6,
+      "title": "Derivative Formulas - Grade 12 Math",
+      "categoryId": 9,
+      "duration": 20,
+      "questionCount": 10,
+      "questionsDetail": [
+        {
+          "id": 1,
+          "question": "What is the derivative of the function f(x) = x^3?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "3x^2",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "x^2",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "3x",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "x^4",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "question": "What is the derivative of sin(x)?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "cos(x)",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "-sin(x)",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "tan(x)",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "sin(x)",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "question": "According to the product rule, what is the derivative of [u(x)v(x)]?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "u'v + uv'",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "u'v - uv'",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "u' + v'",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "uv",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "question": "What is the derivative of e^x?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "e^x",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "e^x ln(e)",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "x^e",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "1/x",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "question": "What is the derivative of ln(x) (for x > 0)?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "1/x",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "ln(x)",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "x",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "e^x",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "question": "What is the derivative of cos(x)?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "-sin(x)",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "sin(x)",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "-cos(x)",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "cos(x)",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "question": "According to the quotient rule, what is the derivative of u(x)/v(x)?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "(u'v - uv') / v^2",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "(u'v + uv') / v^2",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "u' / v'",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "u'v - uv'",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "question": "What is the derivative of tan(x)?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "sec^2(x)",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "csc^2(x)",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "cot(x)",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "tan(x)",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "question": "According to the chain rule, what is the derivative of f(g(x))?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "f'(g(x)) * g'(x)",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "f'(g(x)) + g'(x)",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "f(g'(x))",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "f'(x) * g'(x)",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "question": "What is the derivative of a^x (where a > 0)?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "a^x ln(a)",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "a^x",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "x^a",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "ln(a^x)",
+              "correct": false
+            }
+          ]
+        }
+      ],
+      "plays": 0
+    },
+    {
+      "title": "hook useParams",
+      "categoryId": 4,
+      "duration": 15,
+      "questionCount": 2,
+      "questionsDetail": [
+        {
+          "id": 1,
+          "question": "Mục đích chính của hook useParams trong React Router là gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Điều hướng giữa các route",
+              "correct": false
+            },
+            {
+              "id": 2,
+              "text": "Xử lý tham số query như ?search=term",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Quản lý trạng thái component",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Truy cập các tham số động trong URL (ví dụ: :id từ /users/:id)",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "question": "Cách import hook useParams như thế nào?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "import useParams from 'router-toolkit'",
+              "correct": false
+            },
+            {
+              "id": 2,
+              "text": "import { useParams } from 'react'",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "import { useParams } from 'react-router'",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "import { useParams } from 'react-router-dom'",
+              "correct": true
+            }
+          ]
+        }
+      ],
+      "plays": 0,
+      "id": 7
+    },
+    {
+      "title": "Giới Thiệu Java GUI - AWT và Swing",
+      "categoryId": 4,
+      "duration": 45,
+      "questionCount": 30,
+      "questionsDetail": [
+        {
+          "id": 1,
+          "question": "Nội dung chính của tài liệu bao gồm những gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Giới thiệu AWT và Swing, Xây dựng Java GUI cơ bản, Cơ chế kiểm soát sự kiện người dùng",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Chỉ giới thiệu AWT",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Chỉ xây dựng GUI nâng cao",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không đề cập đến sự kiện người dùng",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "question": "AWT là viết tắt của gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Abstract Window Toolkit",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Advanced Web Toolkit",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Application Window Tool",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Abstract Web Technology",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "question": "AWT được giới thiệu trong phiên bản Java nào?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Java 1.1",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Java 1.0",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Java 2.0",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Java 8",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "question": "Đặc điểm của AWT bao gồm?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Bao gồm tập hợp các lớp ngang hàng, tức là giao diện lập trình ứng dụng cho các tính năng của hệ hiện có được cung cấp bởi hệ điều hành",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Chỉ hỗ trợ mô hình ủy quyền",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Không quản lý bộ cục",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không có lớp chứa",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "question": "AWT cung cấp mấy mô hình xử lý biến cố?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Hai mô hình: Mô hình thừa hưởng và Mô hình ủy quyền",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Một mô hình",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Ba mô hình",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không có mô hình nào",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "question": "Hạn chế của AWT là gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Chiếm nhiều tài nguyên hệ thống (heavyweight object)",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Không phụ thuộc vào hệ điều hành",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Có mã rỗng",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không gặp vấn đề đọc lập hệ nén",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "question": "JFC gồm mấy phần chính?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "5 phần: Swing, AWT, Accessibility API, 2D API, Drag and Drop",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "3 phần",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "4 phần",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "6 phần",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "question": "Swing được giới thiệu từ phiên bản Java nào?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Java 1.2",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Java 1.1",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Java 2.0",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Java 3.0",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "question": "Đặc tính của Swing là gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Các thành phần nhẹ (lightweight), Kiến trúc cắm quan (look and feel)",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Heavyweight components",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Không hỗ trợ pluggable look-and-feel",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Phụ thuộc vào mã bàn ngử",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "question": "Ưu điểm của Swing so với AWT?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Hỗ trợ pluggable look-and-feel, Hỗ trợ các công nghệ nhập xuất mới, Đè dàng mở rộng",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Chiếm nhiều tài nguyên hơn",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Không hỗ trợ mouse",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Button chỉ hỗ trợ văn bản",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 11,
+          "question": "Kiến trúc MVC của Swing chia thành mấy phần?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "3 phần: Model, View, Controller",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "2 phần",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "4 phần",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "1 phần",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "question": "Model trong MVC của Swing là gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Phần chứa nội dung trang thái của các thành phần GUI",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Thể hiện trực quan",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Quản lý sự kiện",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không tồn tại",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "question": "View trong MVC của Swing là gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Thể hiện trực quan thành phần GUI",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Chứa nội dung trạng thái",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Quản lý sự kiện",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Cập nhật model",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 14,
+          "question": "Controller trong MVC của Swing là gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Quản lý cách thực tương tác giữa các thành phần GUI với các sự kiện người dùng",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Thể hiện trực quan",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Chứa dữ liệu",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không quan trọng",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 15,
+          "question": "Trong MVC thông thường, Model làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "The MODEL passes its data to the VIEW for rendering",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Cập nhật dựa trên sự kiện",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Xác định sự kiện",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không làm gì",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 16,
+          "question": "Trong Swing, MVC đơn giản gọi là gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "model-delegate",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "view-controller",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "controller-model",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "delegate-view",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 17,
+          "question": "UI-delegate trong Swing làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Hiển thi thành phần Swing lên màn hình và Quản lý các sự kiện",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Chỉ hiển thị",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Chỉ quản lý sự kiện",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Lưu trữ dữ liệu",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 18,
+          "question": "Mô hình thành phần GUI trong Swing gồm mấy phần?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "2 phần: Model và UI-delegate",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "3 phần",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "1 phần",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "4 phần",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 19,
+          "question": "AWT và Swing cung cấp những thành phần nào để tạo GUI?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Container, Component, Layout manager, Graphic và drawing, Font, Event",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Chỉ Container",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Chỉ Event",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không có Font",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 20,
+          "question": "Trong AWT class hierarchy, lớp cha của Component là gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Object",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Container",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Window",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Frame",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "question": "Trong Swing class hierarchy, JComponent là lớp cha của những gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "AbstractButton, JTextComponent, JList, JMenuBar, JPanel, etc.",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Chỉ JButton",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Không có con",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Chỉ JFrame",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 22,
+          "question": "Ví dụ tạo cửa sổ với Swing sử dụng lớp nào?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "JFrame",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Frame",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Window",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Applet",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "question": "Component trong GUI là gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Các đối tượng có biểu diễn đồ họa được hiển thị lên màn hình mà người dùng tương tác được",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Chỉ container",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Không tương tác",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Chỉ hiển thị",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 24,
+          "question": "Container dùng để làm gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Đối tượng vật chứa hay những đối tượng có khả năng quản lý và nhóm các đối tượng khác lại",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Chỉ hiển thị",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Không chứa component",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Chỉ Panel",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 25,
+          "question": "Panel là gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Đối tượng khung chứa đơn giản nhất dùng để nhóm các đối tượng, thành phần con lại với nhau",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Có thanh trượt",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Hộp thoại",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Cửa sổ chính",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 26,
+          "question": "Top-level component trong Swing là gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Là thành phần trên cùng của bất kì Swing container hierarchy nào",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Intermediate containers",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Special-Purpose Containers",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không tồn tại",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 27,
+          "question": "Intermediate containers dùng để gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Là thành phần đơn thuần dùng để chứa các component khác",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Cửa sổ chính",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Có chức năng đặc biệt",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không chứa component",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 28,
+          "question": "Cấu trúc JFrame có những lớp nào?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "glassPane, layeredPane, rootPane, contentPane",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Chỉ contentPane",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Không có glassPane",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Chỉ rootPane",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 29,
+          "question": "Các thành phần điều khiển cơ bản dùng để gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Dùng để nhận dữ liệu từ người sử dụng",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Chỉ hiển thị thông tin",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Chọn định dạng",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không tương tác",
+              "correct": false
+            }
+          ]
+        },
+        {
+          "id": 30,
+          "question": "Các thành phần sửa chữa định dạng dùng để gì?",
+          "answers": [
+            {
+              "id": 1,
+              "text": "Dùng để hiển thị các thông tin định dạng, Cho phép người dùng lựa chọn định dạng",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Nhận dữ liệu",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "Hiển thị thông tin",
+              "correct": false
+            },
+            {
+              "id": 4,
+              "text": "Không cho chọn",
+              "correct": false
+            }
+          ]
+        }
+      ],
+      "plays": 0,
+      "id": 8
+    }
+  ],
+  "quizzes": [
+    {
+      "id": 1,
+      "image": "/assets/Image.svg",
+      "categoryId": 3,
+      "title": "General Knowledge",
+      "ques": 16,
+      "plays": 100
+    },
+    {
+      "id": 2,
+      "image": "/assets/Image.svg",
+      "categoryId": 2,
+      "title": "Science Trivia",
+      "ques": 12,
+      "plays": 150
+    },
+    {
+      "id": 3,
+      "image": "/assets/Image.svg",
+      "categoryId": 5,
+      "title": "Music Quiz",
+      "ques": 10,
+      "plays": 50
+    }
+  ]
+}
