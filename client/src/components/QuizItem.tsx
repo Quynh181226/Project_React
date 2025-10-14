@@ -17,7 +17,7 @@ const QuizItem = ({ id, title, ques, plays, categoryDisplay }: Quiz) => {
                 <p className="text-center font-inter text-[14px]">{categoryDisplay}</p>
                 <strong className="text-center text-[16px] font-medium">{title}</strong>
                 <p className="text-center font-inter text-[13.5px]">
-                    {ques} câu hỏi - {plays} lượt chơi
+                    {ques} questions - {plays} plays
                 </p>
             </div>
             <div className="pr-4 pt-20">

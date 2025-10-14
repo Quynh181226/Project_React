@@ -50,7 +50,7 @@ const QuizTest = () => {
 
     useEffect(() => {
         if (test) {
-            setTotalQuestions(test.questionsDetail.length);
+            setTotalQuestions(test.quesDetail.length);
 
 
             setTimeLeft(test.duration * 60);
@@ -75,7 +75,7 @@ const QuizTest = () => {
     };
 
     const checkAns=()=>{
-        const currQues=test?.questionsDetail[currQuesIdx];
+        const currQues=test?.quesDetail[currQuesIdx];
 
         const correctIds=currQues?.answers.filter((a) => a.correct).map((a) => a.id);
         const isCorrect=selectedAnswers.sort().toString()===correctIds?.sort().toString();
@@ -129,7 +129,7 @@ const QuizTest = () => {
 
 
 
-    const currentQuestion = test.questionsDetail[currQuesIdx];
+    const currentQuestion = test.quesDetail[currQuesIdx];
 
     return (
         <div className="flex flex-col !bg-[#F4F4F4]">
@@ -139,10 +139,10 @@ const QuizTest = () => {
                 <div className="flex flex-col md:flex-row w-full">
                     <div className="w-full md:w-56 bg-white p-2 md:p-4">
                         <h3 className="text-[#212529] text-center font-inter text-[23.487px] font-medium leading-[30px] mb-3">
-                            Điều hướng nhanh
+                            Quick navigation
                         </h3>
                         <div className="grid grid-cols-12 sm:grid-cols-15 md:grid-cols-4 gap-2 text-center">
-                            {test.questionsDetail.map((q) => (
+                            {test.quesDetail.map((q) => (
                                 <div key={q.id}
                                     className={`flex items-center justify-center !w-7.5 !h-7.5 sm:!w-8.5 sm:!h-8.5 rounded-lg cursor-pointer ${
                                         q.id === currentQuestion.id
@@ -156,7 +156,8 @@ const QuizTest = () => {
                             ))}
                         </div>
                         <p className="text-xs mt-4 text-gray-500">
-                            Lưu ý: Làm bài kiểm tra bạn có thể sử dụng để điều hướng.
+                            Note: During the test, you can use it to navigate.
+                            {/*Lưu ý: Làm bài kiểm tra bạn có thể sử dụng để điều hướng.*/}
                         </p>
                     </div>
 
@@ -166,15 +167,15 @@ const QuizTest = () => {
                                 <h2 className="text-2xl font-bold">{test.title}</h2>
                                 <div className="flex flex-col text-sm mt-1">
                                     <p>
-                                        Thời gian: <span>{test.duration}</span> phút
+                                        Time: <span>{test.duration}</span> minute
                                     </p>
                                     <p className="mt-1">
-                                        Còn lại: <span>{Math.floor(timeLeft / 60)}: {(timeLeft % 60).toString().padStart(2, "0")}</span> phút {/* Thêm timer nếu cần */}
+                                        Remaining: <span>{Math.floor(timeLeft / 60)}: {(timeLeft % 60).toString().padStart(2, "0")}</span> minute
                                     </p>
                                 </div>
                             </div>
 
-                            <p className="text-lg font-medium mt-4 mb-3">Câu hỏi {currentQuestion.id} trên {totalQuestions}:</p>
+                            <p className="text-lg font-medium mt-4 mb-3">Question {currentQuestion.id} above {totalQuestions}:</p>
                             <p className="mb-4">{currentQuestion.question}</p>
 
                             <Checkbox.Group value={selectedAnswers} onChange={handleAnswerChange} className="flex flex-col gap-2">
@@ -187,11 +188,11 @@ const QuizTest = () => {
 
                             <div className="flex flex-row justify-between gap-5 ml-0 md:ml-6 mt-4 md:mt-6">
                                 <div className="flex gap-4 md:gap-6 mb-2 md:mb-0">
-                                    <Button onClick={handlePrev} disabled={currQuesIdx === 0}>Trước</Button>
-                                    <Button type="primary" onClick={handleNext} disabled={currQuesIdx === totalQuestions - 1}>Tiếp</Button>
+                                    <Button onClick={handlePrev} disabled={currQuesIdx === 0}>Prev</Button>
+                                    <Button type="primary" onClick={handleNext} disabled={currQuesIdx === totalQuestions - 1}>Next</Button>
                                 </div>
                                 <Button type="primary" onClick={handleComplete} className="!bg-[#198754]">
-                                    Hoàn thành
+                                   Completed
                                 </Button>
                             </div>
                         </div>

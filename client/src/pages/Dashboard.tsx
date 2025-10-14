@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import QuizList from "../components/QuizList";
 import SortContainer from "../components/SortContainer";
-import Footer1 from "../components/Footer1";
+import Footer from "../components/Footer";
 import { type Quiz } from "../types/type";
 import HandleLogout from "../components/handleLogout.tsx";
 import { useAppDispatch, useAppSelector } from "../hooks/Hook.ts";
@@ -59,7 +59,7 @@ const Dashboard = () => {
                 image: "/assets/Image.svg",
                 categoryId: test.categoryId,
                 title: test.title,
-                ques: test.questionCount,
+                ques: test.quesCnt,
                 plays: test.plays || 0,
                 categoryDisplay: cate ? (
                     <div className="flex items-center justify-center mb-1">
@@ -121,7 +121,7 @@ const Dashboard = () => {
             {totalPages > 1 &&
                 <Pagination currPage={currPage} totalPages={totalPages} onChangePage={handlePageChange} />
             }
-            <Footer1 />
+            <Footer />
         </div>
     );
 };
