@@ -32,7 +32,7 @@ const TestManagement = () => {
                         </select>
 
                         <div className="relative">
-                            <input type="text" id="inputSearch" placeholder="Tìm kiếm theo tên" value={search} onChange={(e) => setSearch(e.target.value)} className="w-53 md:w-full border border-gray-300 rounded-md p-2 pl-10 outline-none focus:ring-2 focus:ring-blue-500"/>
+                            <input type="text" id="inputSearch" placeholder="Search by name" value={search} onChange={(e) => setSearch(e.target.value)} className="w-53 md:w-full border border-gray-300 rounded-md p-2 pl-10 outline-none focus:ring-2 focus:ring-blue-500"/>
                             <i className="fa-solid fa-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
                         </div>
                     </div>

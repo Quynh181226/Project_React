@@ -143,7 +143,7 @@ const SectionAddTest = () => {
                 toast.success("Test created success");
             } else {
                 await dispatch(updateTest(testData)).unwrap();
-                toast.success("Test update successful");
+                toast.success("Test update success");
             }
             navigate("/testManagement");
         } catch (err: any) {
@@ -182,8 +182,8 @@ const SectionAddTest = () => {
                     </Form.Item>
                 </div>
 
-                <h3 className="text-lg font-semibold mt-6">Quản lý câu hỏi</h3>
-                <div className="flex justify-between mt-4 mb-6">
+                <h3 className="text-xl font-semibold mt-6">Question Management</h3>
+                <div className="flex justify-between mb-6">
                     <Button
                         type="primary"
                         onClick={handleAddQues}

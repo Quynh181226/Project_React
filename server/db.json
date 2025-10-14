@@ -2718,30 +2718,30 @@
       "plays": 0
     },
     {
-      "title": "s333emnnjknkjnkj",
-      "categoryId": 3,
-      "duration": 11,
+      "id": 12,
+      "title": "abc",
+      "categoryId": 11,
+      "duration": 1,
       "quesCnt": 1,
       "quesDetail": [
         {
           "id": 1,
-          "question": "ww",
+          "question": "Why do why ?",
           "answers": [
             {
               "id": 1,
-              "text": "ww1",
+              "text": "yes",
               "correct": true
             },
             {
               "id": 2,
-              "text": "ưd",
+              "text": "no",
               "correct": false
             }
           ]
         }
       ],
-      "plays": 0,
-      "id": 12
+      "plays": 0
     }
   ],
   "quizzes": [
