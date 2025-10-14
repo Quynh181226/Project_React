@@ -30,9 +30,6 @@ const Dashboard = () => {
     // const end=currPage * perPage;
     const end=start+perPage;
 
-
-
-
     const handlePageChange=(page: number) => {
         if(currPage >= 1 && currPage <= totalPages){
             setCurrPage(page);
@@ -42,10 +39,11 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                // call both APIs in parallel
-                await Promise.all([dispatch(getAllTests()), dispatch(getAllCategories())]);
+                await dispatch(getAllTests());
+                await dispatch(getAllCategories());
+                // await Promise.all([dispatch(getAllTests()), dispatch(getAllCategories())]);
             } catch (err) {
-                console.log("Err fetching data", err);
+                console.log("Error fetching data", err);
             }
         };
         fetchData();
