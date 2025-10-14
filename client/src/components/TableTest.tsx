@@ -8,6 +8,7 @@ import ModalDeleteTest from "./ModalDeleteTest";
 import {getAllCategories} from "../apis/CateApi.ts";
 import Pagination from "../components/Pagination";
 import LoadingProcess from "./LoadingProcess.tsx";
+import NotFound1 from "../assets/NotFound1.jpg"
 
 interface TableTestProps {
     search: string;
@@ -24,7 +25,7 @@ const TableTest = ({ search, sort }: TableTestProps) => {
     const [selectedTest, setSelectedTest] = useState<TestDetail | undefined>(undefined);
 
     const [currPage, setCurrPage] = useState(1);
-    const perPage = 6;
+    const perPage = 5;
 
     useEffect(() => {
         dispatch(getAllTests());
@@ -49,20 +50,9 @@ const TableTest = ({ search, sort }: TableTestProps) => {
     const totalPages=Math.ceil(filtered.length / perPage);
     const start=(currPage-1) * perPage;
     const end=start+perPage;
-
     const pagi=filtered.slice(start, end);
 
-
-
-
-
-
-
     if (status === "pending") return <LoadingProcess/>;
-
-
-
-
     if (status === "failed") return <p className="text-red-600">{error}</p>;
 
     return (
@@ -79,65 +69,49 @@ const TableTest = ({ search, sort }: TableTestProps) => {
                 </tr>
                 </thead>
                 <tbody>
-                {pagi.map((quiz: TestDetail, index: number) => {
-                    const category = categories.find(c => c.id === quiz.categoryId);
-
-
-
-
-
-
-
-                    // const categoryDisplay = category ? `<img src={category.image} /> {category.name}` : "";
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    return (
-                        <tr key={quiz.id} className={`${index % 2 === 0 ? "bg-gray-50" : "bg-white"} hover:bg-blue-50 transition`}>
-                            <td className="px-4 py-2 border border-[#DEE2E6]">{quiz.id}</td>
-                            <td className="px-4 py-2 border border-[#DEE2E6]">{quiz.title}</td>
-                            <td className="px-4 py-2 border border-[#DEE2E6]">
-                                {/*<td className="px-4 py-2">*/}
-                                {category ? (
-                                    <div className="flex items-center">
-                                        <img src={category.image} alt={category.name} className="w-6 h-6 mr-2 object-cover" />
-                                        {category.name}
+                {pagi.length > 0 ? (
+                    pagi.map((quiz: TestDetail, index: number) => {
+                        const category = categories.find(c => c.id === quiz.categoryId);
+                        return (
+                            <tr key={quiz.id} className={`${index % 2 === 0 ? "bg-gray-50" : "bg-white"} hover:bg-blue-50 transition`}>
+                                <td className="px-4 py-2 border border-[#DEE2E6]">{quiz.id}</td>
+                                <td className="px-4 py-2 border border-[#DEE2E6]">{quiz.title}</td>
+                                <td className="px-4 py-2 border border-[#DEE2E6]">
+                                    {category ? (
+                                        <div className="flex items-center">
+                                            <img src={category.image} alt={category.name} className="w-6 h-6 mr-2 object-cover" />
+                                            {category.name}
+                                        </div>
+                                    ) : (
+                                        <div className="px-4 py-2">Cate empty</div>
+                                    )}
+                                </td>
+                                <td className="px-4 py-2 border border-[#DEE2E6] text-center">{quiz.quesCnt}</td>
+                                <td className="px-4 py-2 border border-[#DEE2E6] text-center">{quiz.duration} min</td>
+                                <td className="px-4 py-2 border border-[#DEE2E6]">
+                                    <div className="flex justify-center">
+                                        <button onClick={() => navigate(`/createTest/${quiz.id}`)} className="px-3 py-1 rounded bg-yellow-400 text-black hover:bg-yellow-500 mr-2">
+                                            Edit
+                                        </button>
+                                        <button onClick={() => handleDeleteClick(quiz)} className="px-3 py-1 rounded bg-red-600 text-white hover:bg-red-700">
+                                            Delete
+                                        </button>
                                     </div>
-                                ) : (
-                                    // "Empty"
-                                    <div className="px-4 py-2">Không có danh mục</div>
-                                )}
-                            {/*</td>*/}
-
-
-                                {/*{categoryDisplay}*/}
-                            </td>
-                            <td className="px-4 py-2 border border-[#DEE2E6] text-center">{quiz.quesCnt}</td>
-                            <td className="px-4 py-2 border border-[#DEE2E6] text-center">{quiz.duration} min</td>
-                            <td className="px-4 py-2 border border-[#DEE2E6]">
-                                <div className="flex justify-center">
-                                    <button onClick={() => navigate(`/createTest/${quiz.id}`)} className="px-3 py-1 rounded bg-yellow-400 text-black hover:bg-yellow-500 mr-2">
-                                        Edit
-                                    </button>
-                                    <button onClick={() => handleDeleteClick(quiz)} className="px-3 py-1 rounded bg-red-600 text-white hover:bg-red-700">
-                                        Delete
-                                    </button>
-                                </div>
-                            </td>
-                        </tr>
-                    );
-                })}
+                                </td>
+                            </tr>
+                        );
+                    })
+                ) : (
+                    <tr>
+                        <td colSpan={6}>
+                            <div className="flex flex-col items-center justify-center text-center mt-26">
+                                <img src={NotFound1} alt="No quizzes" className="w-115 h-62 mb-3 opacity-90"/>
+                            </div>
+                        </td>
+                    </tr>
+                )}
                 </tbody>
+
             </table>
             <ModalDeleteTest open={deleteOpen} onClose={() => setDeleteOpen(false)} test={selectedTest} />
 

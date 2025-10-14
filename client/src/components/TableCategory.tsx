@@ -12,7 +12,7 @@ interface TableCategoryProps {
 
 const TableCategory = ({ categories, setCode, setSelectedCategory, setOpenAddEdit, setOpenDelete }: TableCategoryProps) => {
     const [currPage, setCurrPage] = useState(1);
-    const perPage=6;
+    const perPage=5;
 
     const totalPages=Math.ceil(categories.length / perPage);
     const start=(currPage-1)*perPage;
