@@ -4,6 +4,7 @@ import axios from "axios";
 import type { Category } from "../types/type";
 import { useAppDispatch } from "../hooks/Hook";
 import { addCategory, editCategory } from "../apis/CateApi";
+import {toast} from "react-toastify";
 
 interface ModalProps {
     open: boolean;
@@ -18,40 +19,33 @@ const ModalAddEditCategory = ({ open, onClose, category, code }: ModalProps) => 
     const [name, setName] = useState(category?.name ?? "");
     const [image, setImage] = useState<string>(category?.image ?? "");
     const [file, setFile] = useState<File | null>(null);
-    const [displayFileName, setDisplayFileName] = useState<string | null>(null); // Thêm state này
+    const [displayFileName, setDisplayFileName] = useState<string | null>(null);
     // const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
-    // Reset dữ liệu khi mở modal
     useEffect(() => {
         setName(category?.name ?? "");
         setImage(category?.image ?? "");
         setFile(null);
         setError(null);
         if (category?.image && code === "Edit") {
-            // Hiển thị tên file cũ
             setDisplayFileName(category.image.split("/").pop() || "No file selected");
         } else {
-            // Reset khi Add hoặc không có image
             setDisplayFileName(null);
         }
     }, [open, category, code]);
 
-    // Khi chọn file ảnh
     const handleInputFile = (e: ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
             const selectedFile = e.target.files[0];
             setFile(selectedFile);
-            // hiển thị preview tạm thời
             setImage(URL.createObjectURL(selectedFile));
-            // Cập nhật tên file vào placeholder
             setDisplayFileName(selectedFile.name);
         }
     };
 
-    // Upload ảnh lên Cloudinary
-    const uploadToCloudinary = async (): Promise<string | null> => {
-        // nếu không chọn ảnh mới thì giữ ảnh cũ
+    // Promise<string | null>
+    const uploadToCloudinary = async () => {
         if (!file) return image;
 
         const formData = new FormData();
@@ -63,25 +57,23 @@ const ModalAddEditCategory = ({ open, onClose, category, code }: ModalProps) => 
                 "https://api.cloudinary.com/v1_1/dtxlzevgb/image/upload",
                 formData
             );
-            return res.data.secure_url;
+            return res.data.secure_url as string;
         } catch (err) {
             console.error("Upload failed:", err);
-            message.error("Lỗi khi tải ảnh lên Cloudinary!");
+            toast.error("Upload failed!!");
             return null;
         }
     };
 
-    // Khi bấm Lưu
     const handleSubmit = async () => {
         if (!name.trim()) {
-            setError("Tên danh mục không được để trống");
+            setError("Cate not empty");
             return;
         }
 
         // setLoading(true);
         setError(null);
 
-        // Upload ảnh nếu có file mới
         const imageUrl = await uploadToCloudinary();
         // !imageUrl.trim()
         if (!imageUrl) {
