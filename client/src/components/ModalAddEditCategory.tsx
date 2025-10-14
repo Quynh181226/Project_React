@@ -19,7 +19,7 @@ const ModalAddEditCategory = ({ open, onClose, category, code }: ModalProps) => 
     const [image, setImage] = useState<string>(category?.image ?? "");
     const [file, setFile] = useState<File | null>(null);
     const [displayFileName, setDisplayFileName] = useState<string | null>(null); // Thêm state này
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
     // Reset dữ liệu khi mở modal
@@ -78,14 +78,14 @@ const ModalAddEditCategory = ({ open, onClose, category, code }: ModalProps) => 
             return;
         }
 
-        setLoading(true);
+        // setLoading(true);
         setError(null);
 
         // Upload ảnh nếu có file mới
         const imageUrl = await uploadToCloudinary();
         // !imageUrl.trim()
         if (!imageUrl) {
-            setLoading(false);
+            // setLoading(false);
             setError("Cate image not empty");
             return;
         }
@@ -103,9 +103,10 @@ const ModalAddEditCategory = ({ open, onClose, category, code }: ModalProps) => 
             onClose();
         } catch {
             message.error("An error occurred while save");
-        } finally {
-            setLoading(false);
         }
+        // finally {
+        //     setLoading(false);
+        // }
     };
 
     return (
@@ -120,7 +121,7 @@ const ModalAddEditCategory = ({ open, onClose, category, code }: ModalProps) => 
                 <Button
                     key="save"
                     type="primary"
-                    loading={loading}
+                    // loading={loading}
                     onClick={handleSubmit}
                 >
                     Save

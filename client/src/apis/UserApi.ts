@@ -22,7 +22,8 @@ export const login = createAsyncThunk(
             }
             return users[0];
         } catch (err) {
-            return rejectWithValue("Login failed. Please try again later.");
+            return rejectWithValue("Login failed");
+            // console.error("Login failed: ",err);
         }
     }
 );

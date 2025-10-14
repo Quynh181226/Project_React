@@ -19,26 +19,24 @@ const SectionAddTest = () => {
 
     const [modalOpen, setModalOpen] = useState(false);
     const [editQues, setEditQues] = useState<Question | null>(null);
-    const [currentTest, setCurrentTest] = useState<TestDetail>({
+    const [currTest, setCurrTest] = useState<TestDetail>({
         id: 0,
         title: "",
         categoryId: 0,
         duration: 0,
-        questionCount: 0,
-        questionsDetail: [],
+        quesCnt: 0,
+        quesDetail: [],
         plays: 0,
     });
     const [form] = Form.useForm();
-    // Thêm state để quản lý lỗi
-    const [testTitleError, setTestTitleError] = useState<string | null>(null);
+    const [testTitleErr, setTestTitleErr] = useState<string | null>(null);
     const [durationError, setDurationError] = useState<string | null>(null);
 
-    // Load test đang chọn (nếu có)
     useEffect(() => {
         if (selectedTest) {
-            setCurrentTest({
+            setCurrTest({
                 ...selectedTest,
-                questionsDetail: selectedTest.questionsDetail || [],
+                quesDetail: selectedTest.quesDetail || [],
             });
             form.setFieldsValue({
                 testName: selectedTest.title,
@@ -46,20 +44,19 @@ const SectionAddTest = () => {
                 time: selectedTest.duration,
             });
         } else {
-            setCurrentTest({
+            setCurrTest({
                 id: 0,
                 title: "",
                 categoryId: 0,
                 duration: 0,
-                questionCount: 0,
-                questionsDetail: [],
+                quesCnt: 0,
+                quesDetail: [],
                 plays: 0,
             });
             form.resetFields();
         }
     }, [selectedTest, form]);
 
-    // Mở modal thêm/sửa câu hỏi
     const handleAddQues = () => {
         setEditQues(null);
         setModalOpen(true);
@@ -70,64 +67,59 @@ const SectionAddTest = () => {
         setModalOpen(true);
     };
 
-    // Callback khi lưu câu hỏi từ ModalAddEditQues
-    const handleSaveQuestion = (updatedQuestions: Question[]) => {
-        setCurrentTest({
-            ...currentTest,
-            questionsDetail: updatedQuestions,
-            questionCount: updatedQuestions.length,
+    const handleSaveQues = (updatedQues: Question[]) => {
+        setCurrTest({
+            ...currTest,
+            quesDetail: updatedQues,
+            quesCnt: updatedQues.length,
+        });
+        setModalOpen(false);
+    };
+
+    const handleDeleQues = (quesId: number) => {
+        const updatedQues = currTest.quesDetail.filter((q) => q.id !== quesId);
+        setCurrTest({
+            ...currTest,
+            quesDetail: updatedQues,
+            quesCnt: updatedQues.length,
         });
     };
 
-    // Xóa câu hỏi cục bộ cho test mới
-    const handleLocalDeleteQues = (quesId: number) => {
-        const updatedQuestions = currentTest.questionsDetail.filter((q) => q.id !== quesId);
-        setCurrentTest({
-            ...currentTest,
-            questionsDetail: updatedQuestions,
-            questionCount: updatedQuestions.length,
-        });
-    };
-
-    // Validate tên bài test
     const validateTestTitle = (value: string) => {
-        if (!value || value.trim().length < 3) {
-            setTestTitleError("Tên bài test phải >= 3 ký tự");
+        if (!value || value.trim().length < 2) {
+            setTestTitleErr("Test name must be >= 2 characters");
             return false;
         }
         if (
             tests.some(
                 t =>
                     t.title.toLowerCase() === value.toLowerCase() &&
-                    (!currentTest || t.id !== currentTest.id)
+                    (!currTest || t.id !== currTest.id)
             )
         ) {
-            setTestTitleError("Tên bài test đã tồn tại");
+            setTestTitleErr("The test name already exists");
             return false;
         }
-        setTestTitleError(null);
+        setTestTitleErr(null);
         return true;
     };
 
-    // Validate thời lượng
-    const validateDuration = (value: number) => {
-        if (!value || value <= 0 || value > 120) {
-            setDurationError("Thời gian phải 1-120 phút");
+    const validateDuration = (val: number) => {
+        if (!val || val <= 0 || val > 120) {
+            setDurationError("Time must be 1-120 minutes");
             return false;
         }
         setDurationError(null);
         return true;
     };
 
-    // Submit form (Lưu bài test)
     const onFinish = async (values: any) => {
-        const questionsList = currentTest.questionsDetail || [];
+        const questionsList = currTest.quesDetail || [];
         if (questionsList.length === 0) {
-            toast.error("Bài test cần ít nhất 1 câu hỏi");
+            toast.error("The test requires at least one question");
             return;
         }
 
-        // Kiểm tra validate trước khi submit
         const isTitleValid = validateTestTitle(values.testName);
         const isDurationValid = validateDuration(values.time);
 
@@ -136,59 +128,43 @@ const SectionAddTest = () => {
         }
 
         const testData: TestDetail = {
-            id: currentTest.id,
+            id: currTest.id,
             title: values.testName,
             categoryId: values.category,
             duration: values.time,
-            questionCount: questionsList.length,
-            questionsDetail: questionsList,
-            plays: currentTest.plays || 0,
+            quesCnt: questionsList.length,
+            quesDetail: questionsList,
+            plays: currTest.plays || 0,
         };
 
         try {
-            if (currentTest.id === 0) {
+            if (currTest.id === 0) {
                 await dispatch(addTest(testData)).unwrap();
-                toast.success("Tạo bài test thành công");
+                toast.success("Test created success");
             } else {
                 await dispatch(updateTest(testData)).unwrap();
-                toast.success("Cập nhật bài test thành công");
+                toast.success("Test update successful");
             }
             navigate("/testManagement");
         } catch (err: any) {
-            toast.error(`Lỗi khi lưu bài test: ${err.message || "Không xác định"}`);
+            toast.error(`Err saving test: ${err.message}`);
         }
     };
 
     return (
         <>
             <h2 className="text-2xl font-semibold mt-6 mb-4">
-                {currentTest.id ? "Edit the test" : "Create the test"}
+                {currTest.id ? "Edit the test" : "Create the test"}
             </h2>
 
-            <Form
-                form={form}
-                layout="vertical"
-                className="space-y-4"
-                onFinish={onFinish}
-            >
-                <Form.Item
-                    label="Test name"
-                    name="testName"
-                    validateStatus={testTitleError ? "error" : ""}
-                    help={testTitleError}
-                >
-                    <Input
-                        placeholder="Fill in the test name"
-                        onChange={(e) => validateTestTitle(e.target.value)}
-                    />
+            <Form form={form} layout="vertical" className="space-y-4" onFinish={onFinish}>
+                <Form.Item label="Test name" name="testName" validateStatus={testTitleErr ? "error" : ""} help={testTitleErr}>
+                    <Input placeholder="Fill in the test name" onChange={(e) => validateTestTitle(e.target.value)}/>
                 </Form.Item>
 
                 <div className="flex gap-4">
-                    <Form.Item
-                        label="Category"
-                        name="category"
-                        // rules={[{ required: true }]}
-                    >
+                    <Form.Item label="Category" name="category">
+                     {/*rules={[{ required: true }]}*/}
                         <Select placeholder="Select category">
                             {categoryList.map(c => (
                                 <Select.Option key={c.id} value={c.id}>
@@ -201,18 +177,8 @@ const SectionAddTest = () => {
                         </Select>
                     </Form.Item>
 
-                    <Form.Item
-                        label="Time (minutes)"
-                        name="time"
-                        validateStatus={durationError ? "error" : ""}
-                        help={durationError}
-                    >
-                        <InputNumber
-                            min={1}
-                            max={120}
-                            className="w-full"
-                            onChange={(value) => validateDuration(value as number)}
-                        />
+                    <Form.Item label="Time (minutes)" name="time" validateStatus={durationError ? "error" : ""} help={durationError}>
+                        <InputNumber min={1} max={120} className="w-full" onChange={(val) => validateDuration(val as number)}/>
                     </Form.Item>
                 </div>
 
@@ -231,19 +197,19 @@ const SectionAddTest = () => {
             </Form>
 
             <TableQues
-                testId={currentTest.id}
-                questions={currentTest.questionsDetail}
+                testId={currTest.id}
+                questions={currTest.quesDetail}
                 onEdit={handleEditQues}
-                onDelete={currentTest.id === 0 ? handleLocalDeleteQues : undefined}
+                onDelete={currTest.id === 0 ? handleDeleQues : undefined}
             />
 
             {modalOpen && (
                 <ModalAddEditQues
                     open={modalOpen}
                     onClose={() => setModalOpen(false)}
-                    testData={currentTest}
+                    testData={currTest}
                     editData={editQues}
-                    onSave={handleSaveQuestion}
+                    onSave={handleSaveQues}
                 />
             )}
         </>

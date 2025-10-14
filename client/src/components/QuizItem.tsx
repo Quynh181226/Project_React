@@ -15,7 +15,7 @@ const QuizItem = ({ id, title, ques, plays, categoryDisplay }: Quiz) => {
             <img src={Image} alt={title} className="w-28 h-28 ml-3 object-cover rounded" />
             <div className="flex-1 p-4 flex flex-col justify-center">
                 <p className="text-center font-inter text-[14px]">{categoryDisplay}</p>
-                <strong className="text-center text-[18px] font-medium">{title}</strong>
+                <strong className="text-center text-[16px] font-medium">{title}</strong>
                 <p className="text-center font-inter text-[13.5px]">
                     {ques} câu hỏi - {plays} lượt chơi
                 </p>

@@ -4,10 +4,10 @@ import type { RootState, AppDispatch } from "../stores/Store";
 import type { TestDetail } from "../types/type";
 import { getAllTests } from "../apis/TestApi";
 import { useNavigate } from "react-router-dom";
-// import { getAllCategories} from "../slices/CategoriesSlice";
 import ModalDeleteTest from "./ModalDeleteTest";
 import {getAllCategories} from "../apis/CateApi.ts";
 import Pagination from "../components/Pagination";
+import LoadingProcess from "./LoadingProcess.tsx";
 
 interface TableTestProps {
     search: string;
@@ -24,7 +24,7 @@ const TableTest = ({ search, sort }: TableTestProps) => {
     const [selectedTest, setSelectedTest] = useState<TestDetail | undefined>(undefined);
 
     const [currPage, setCurrPage] = useState(1);
-    const perPage = 5;
+    const perPage = 6;
 
     useEffect(() => {
         dispatch(getAllTests());
@@ -52,7 +52,17 @@ const TableTest = ({ search, sort }: TableTestProps) => {
 
     const pagi=filtered.slice(start, end);
 
-    if (status === "pending") return <p>Loading...</p>;
+
+
+
+
+
+
+    if (status === "pending") return <LoadingProcess/>;
+
+
+
+
     if (status === "failed") return <p className="text-red-600">{error}</p>;
 
     return (
@@ -112,7 +122,7 @@ const TableTest = ({ search, sort }: TableTestProps) => {
 
                                 {/*{categoryDisplay}*/}
                             </td>
-                            <td className="px-4 py-2 border border-[#DEE2E6] text-center">{quiz.questionCount}</td>
+                            <td className="px-4 py-2 border border-[#DEE2E6] text-center">{quiz.quesCnt}</td>
                             <td className="px-4 py-2 border border-[#DEE2E6] text-center">{quiz.duration} min</td>
                             <td className="px-4 py-2 border border-[#DEE2E6]">
                                 <div className="flex justify-center">

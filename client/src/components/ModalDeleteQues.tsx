@@ -1,4 +1,3 @@
-// ModalDeleteQues.tsx (add customHandleDelete for local delete)
 import { Button, Modal } from "antd";
 import { useAppDispatch } from "../hooks/Hook";
 import type { Question } from "../types/type";
@@ -35,17 +34,17 @@ const ModalDeleteQues = ({ open, onClose, ques, testId, onDeleted, customHandleD
     };
 
     return (
-        <Modal open={open} onCancel={onClose} title="Xác nhận xóa"
+        <Modal open={open} onCancel={onClose} title="Confirm delete"
                footer={[
-                   <Button key="cancel" onClick={onClose}>Hủy</Button>,
+                   <Button key="cancel" onClick={onClose}>Cancel</Button>,
                    <Button key="delete" type="primary" className="!bg-red-700" onClick={handleDelete}>
-                       Xóa
+                       Delete
                    </Button>
                ]}
         >
             <div className="-mx-6 mt-2.5 mb-5 border-t border-gray-300"></div>
             <p className="text-base font-normal my-10">
-                Bạn chắc chắn muốn xóa câu hỏi "{ques?.question}"?
+                Are you sure you want to delete the question "{ques?.question}"?
             </p>
             <div className="-mx-6 mb-4 mt-5 border-b border-gray-300"></div>
         </Modal>

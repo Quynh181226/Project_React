@@ -60,9 +60,9 @@ export interface TestDetail {
     title: string;
     categoryId: number;
     plays: number;
-    questionCount: number;
+    quesCnt: number;
     duration: number;
-    questionsDetail: Question[];
+    quesDetail: Question[];
 }
 
 export interface TestState {

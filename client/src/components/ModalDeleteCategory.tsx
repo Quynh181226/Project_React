@@ -26,14 +26,14 @@ const ModalDeleteCategory = ({ open, onClose, category }: ModalProps) => {
         <Modal
             open={open}
             onCancel={onClose}
-            title="Xác nhận xóa"
+            title="Confirm delete"
             footer={[
                 <Button key="reset" onClick={onClose}>Cancel</Button>,
                 <Button key="delete" type="primary" className="!bg-red-700" onClick={handleDelete}>Delete</Button>
             ]}
         >
             <div className="-mx-6 mt-2.5 mb-5 border-t border-gray-300"></div>
-            <p className="text-base font-normal my-10">Bạn chắc chắn muốn xóa danh mục "{category?.name}"?</p>
+            <p className="text-base font-normal my-10">Are you sure you want to delete the category "{category?.name}"?</p>
             <div className="-mx-6 mb-4 mt-5 border-b border-gray-300"></div>
         </Modal>
     );

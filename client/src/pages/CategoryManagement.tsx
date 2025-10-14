@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Button } from "antd";
-// import { getAllCategories } from "../slices/CategoriesSlice.ts";
 import TableCategory from "../components/TableCategory";
 import ModalAddEditCategory from "../components/ModalAddEditCategory";
 import ModalDeleteCategory from "../components/ModalDeleteCategory";
@@ -8,9 +7,9 @@ import type { Category } from "../types/type";
 import Header1 from "../components/Header1";
 import Footer from "../components/Footer";
 import HandleLogout from "../components/handleLogout.tsx";
-
 import { useAppDispatch, useAppSelector } from "../hooks/Hook";
 import {getAllCategories} from "../apis/CateApi.ts";
+import LoadingProcess from "../components/LoadingProcess.tsx";
 
 const CategoryManagement = () => {
     const dispatch = useAppDispatch();
@@ -41,7 +40,15 @@ const CategoryManagement = () => {
                     Add Category
                 </Button>
 
-                {loading && <div>Loading...</div>}
+
+
+
+
+                {loading && <LoadingProcess/>}
+
+
+
+
                 {error && <div>{error}</div>}
 
                 <TableCategory

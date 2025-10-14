@@ -9,6 +9,8 @@ import { useAppDispatch, useAppSelector } from "../hooks/Hook";
 import { getTest } from "../apis/TestApi";
 import {increasePlays} from "../apis/HomeApi.ts";
 import {increasePlayCnt} from "../slices/TestsSlice.ts";
+import LoadingProcess from "../components/LoadingProcess.tsx";
+
 
 const QuizTest = () => {
     const { id } = useParams<{ id: string }>();
@@ -117,16 +119,24 @@ const QuizTest = () => {
         setOpen(true);
     };
 
-    if (!test) return <p>Loading...</p>;
+
+
+
+
+    if (!test) return <LoadingProcess/>;
+
+
+
+
 
     const currentQuestion = test.questionsDetail[currQuesIdx];
 
     return (
-        <div className="flex flex-col min-h-screen bg-[#F4F4F4]">
+        <div className="flex flex-col !bg-[#F4F4F4]">
             <Header2 onLogout={HandleLogout} />
 
-            <main className="flex-1 flex justify-center p-3">
-                <div className="flex flex-col md:flex-row bg-gray-100 w-full">
+            <main className="flex-1 flex justify-center p-3 ">
+                <div className="flex flex-col md:flex-row w-full">
                     <div className="w-full md:w-56 bg-white p-2 md:p-4">
                         <h3 className="text-[#212529] text-center font-inter text-[23.487px] font-medium leading-[30px] mb-3">
                             Điều hướng nhanh
@@ -134,10 +144,10 @@ const QuizTest = () => {
                         <div className="grid grid-cols-12 sm:grid-cols-15 md:grid-cols-4 gap-2 text-center">
                             {test.questionsDetail.map((q) => (
                                 <div key={q.id}
-                                    className={`flex items-center justify-center w-8.5 h-8.5 rounded-lg cursor-pointer ${
+                                    className={`flex items-center justify-center !w-7.5 !h-7.5 sm:!w-8.5 sm:!h-8.5 rounded-lg cursor-pointer ${
                                         q.id === currentQuestion.id
-                                            ? "bg-blue-500 text-white"
-                                            : "bg-gray-100 hover:bg-gray-200"
+                                            ? "bg-blue-500 text-white !text-[14px] sm:!text-[16px]"
+                                            : "bg-gray-100 hover:bg-gray-200 !text-[14px] sm:!text-[16px]"
                                     }`}
                                     onClick={() => setCurrQuesIdx(q.id - 1)}
                                 >
@@ -191,6 +201,7 @@ const QuizTest = () => {
 
             <ModalComplete open={open} onClose={() => setOpen(false)} score={Math.round((score / totalQuestions) * 100)} totalQuestions={totalQuestions} correctAnswers={correctAnswers} wrongAnswers={wrongAnswers} />
 
+            <div className="my-15 md:my-0 "></div>
             <Footer />
         </div>
     );

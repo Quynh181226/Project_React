@@ -12,7 +12,7 @@ interface ModalProps {
     onClose: () => void;
     testData: TestDetail;
     editData?: Question | null;
-    onSave?: (updatedQuestions: Question[]) => void;
+    onSave?: (updatedQues: Question[]) => void;
 }
 
 const ModalAddEditQues = ({ open, onClose, testData, editData, onSave }: ModalProps) => {
@@ -28,24 +28,22 @@ const ModalAddEditQues = ({ open, onClose, testData, editData, onSave }: ModalPr
         { id: 4, text: "", correct: false },
     ]);
 
-    // ✅ Gộp useEffect, xử lý editData và open đồng bộ
     useEffect(() => {
-        if (!open) return;
-
-        setErrQues(null);
-        setErrAns(null);
-
-        if (editData) {
-            setQuestion(editData.question);
-            setAnswers(editData.answers);
-        } else {
-            setQuestion("");
-            setAnswers([
-                { id: 1, text: "", correct: false },
-                { id: 2, text: "", correct: false },
-                { id: 3, text: "", correct: false },
-                { id: 4, text: "", correct: false },
-            ]);
+        if (open) {
+            setErrQues(null);
+            setErrAns(null);
+            if (editData) {
+                setQuestion(editData.question);
+                setAnswers(editData.answers);
+            } else {
+                setQuestion("");
+                setAnswers([
+                    { id: 1, text: "", correct: false },
+                    { id: 2, text: "", correct: false },
+                    { id: 3, text: "", correct: false },
+                    { id: 4, text: "", correct: false },
+                ]);
+            }
         }
     }, [open, editData]);
 
@@ -73,18 +71,14 @@ const ModalAddEditQues = ({ open, onClose, testData, editData, onSave }: ModalPr
     };
 
     const handleSave = async () => {
-        let hasError = false;
         setErrQues(null);
         setErrAns(null);
+        let hasError = false;
 
         if (!question.trim()) {
             setErrQues("Question not empty");
             hasError = true;
         }
-        // else if (question.length < 2) {
-        //     setErrQues("Question must have at least 2 characters");
-        //     hasError = true;
-        // }
 
         if (answers.some((a) => !a.text.trim())) {
             setErrAns("Answer not empty");
@@ -101,39 +95,48 @@ const ModalAddEditQues = ({ open, onClose, testData, editData, onSave }: ModalPr
 
         const newQuesId =
             editData?.id ||
-            (testData.questionsDetail.length > 0
-                ? Math.max(...testData.questionsDetail.map((e) => e.id)) + 1
+            (testData.quesDetail.length > 0
+                ? Math.max(...testData.quesDetail.map((e) => e.id)) + 1
                 : 1);
 
-        const newQuestion: Question = {
+        const newQues: Question = {
             id: newQuesId,
             question,
             answers: answers.map((a) => ({ ...a })),
         };
 
-        const updatedQuestions = editData
-            ? testData.questionsDetail.map((e) =>
-                e.id === editData.id ? newQuestion : e
+        const updatedQues = editData
+            ? testData.quesDetail.map((e) =>
+                e.id === editData.id ? newQues : e
             )
-            : [...testData.questionsDetail, newQuestion];
+            : [...testData.quesDetail, newQues];
 
         try {
             const updatedTest: TestDetail = {
                 ...testData,
-                questionCount: updatedQuestions.length,
-                questionsDetail: updatedQuestions,
+                quesCnt: updatedQues.length,
+                quesDetail: updatedQues,
             };
+
+            if (onSave) {
+                onSave(updatedQues);
+                onClose();
+                return;
+            }
 
             if (testData.id !== 0) {
                 await dispatch(updateTest(updatedTest)).unwrap();
-                toast.success(editData ? "Question updated successfully" : "Question added successfully");
+                toast.success(
+                    editData
+                        ? "Question updated success"
+                        : "Question added success"
+                );
             }
 
-            if (onSave) onSave(updatedQuestions);
             onClose();
         } catch (err) {
             console.error("Update test error:", err);
-            toast.error(`Error saving question: ${err || "Unknown error"}`);
+            toast.error(`Err saving ques: ${err}`);
         }
     };
 
@@ -142,7 +145,7 @@ const ModalAddEditQues = ({ open, onClose, testData, editData, onSave }: ModalPr
             open={open}
             onCancel={onClose}
             title={editData ? "Edit question" : "Add question"}
-            destroyOnClose={false} // ✅ Giữ lại state
+            destroyOnClose
             footer={[
                 <Button key="cancel" onClick={onClose}>
                     Cancel
@@ -154,11 +157,7 @@ const ModalAddEditQues = ({ open, onClose, testData, editData, onSave }: ModalPr
         >
             <div className="mb-4">
                 <label className="block font-medium mb-2">Question</label>
-                <Input
-                    value={question}
-                    onChange={(e) => setQuestion(e.target.value)}
-                    placeholder="Input question"
-                />
+                <Input value={question}  placeholder="Input question" onChange={(e) => setQuestion(e.target.value)}/>
                 {errQues && <div className="text-red-500 text-sm mt-2">{errQues}</div>}
             </div>
 

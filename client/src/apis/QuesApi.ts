@@ -2,12 +2,11 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axiosConfig from "../utils/axiosConfig";
 import type { Question, TestDetail } from "../types/type";
 
-// Lấy danh sách câu hỏi theo testId
 export const getAllQues = createAsyncThunk<Question[], number>(
     "ques/getAll",
     async (testId) => {
         const res = await axiosConfig.get(`tests/${testId}`);
-        return res.data.questionsDetail || [];
+        return res.data.quesDetail || [];
     }
 );
 
@@ -19,8 +18,8 @@ export const addQues = createAsyncThunk<Question, { testId: number; newQues: Que
 
         const updatedTest: TestDetail = {
             ...test,
-            questionsDetail: [...(test.questionsDetail || []), newQues],
-            questionCount: (test.questionsDetail?.length || 0) + 1,
+            quesDetail: [...(test.quesDetail || []), newQues],
+            quesCnt: (test.quesDetail?.length || 0) + 1,
         };
 
         await axiosConfig.put(`tests/${testId}`, updatedTest);
@@ -36,8 +35,8 @@ export const deleteQues = createAsyncThunk<number, { testId: number; quesId: num
 
         const updatedTest: TestDetail = {
             ...test,
-            questionsDetail: (test.questionsDetail || []).filter((q) => q.id !== quesId),
-            questionCount: Math.max((test.questionsDetail?.length || 1) - 1, 0),
+            quesDetail: (test.quesDetail || []).filter((q) => q.id !== quesId),
+            quesCnt: Math.max((test.quesDetail?.length || 1) - 1, 0),
         };
 
         await axiosConfig.put(`tests/${testId}`, updatedTest);
@@ -53,7 +52,7 @@ export const updateQues = createAsyncThunk<Question, { testId: number; ques: Que
 
         const updatedTest: TestDetail = {
             ...test,
-            questionsDetail: (test.questionsDetail || []).map((q) =>
+            quesDetail: (test.quesDetail || []).map((q) =>
                 q.id === ques.id ? ques : q
             ),
         };

@@ -63,7 +63,7 @@ const Dashboard = () => {
                 plays: test.plays || 0,
                 categoryDisplay: cate ? (
                     <div className="flex items-center justify-center mb-1">
-                        <img src={cate.image} alt={cate.name} className="w-6 h-6 mr-2 object-cover" />
+                        <img src={cate.image} alt={cate.name} className="!w-5 !h-5 mr-2 object-cover" />
                         {cate.name}
                     </div>
                 ): (
@@ -98,7 +98,7 @@ const Dashboard = () => {
     };
 
     return (
-        <div className=" flex flex-col">
+        <div className=" flex flex-col min-h-screen">
             <Header onLogout={HandleLogout} onSearch={setSearch} />
             <HeroSection onRandomQuiz={handleRandomQuiz} />
             <h3 className="text-center text-2xl font-semibold my-5">⭐ Featured quizzes</h3>

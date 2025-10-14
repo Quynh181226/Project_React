@@ -46,7 +46,7 @@ const Login = () => {
 
 
             if (login.fulfilled.match(result)) {
-                toast.success("Login success");
+                toast.success("Login success!!");
                 setTimeout(() => {
                     if (user.role === "admin") {
                         navigate("/categoryManagement");
@@ -60,15 +60,15 @@ const Login = () => {
         } catch (err) {
             console.error("Login error:", err);
 
-
-            toast.error("Login failed: Server error.");
+            // Server error
+            toast.error("Login failed!!");
         }
     };
 
     return (
         <>
             <div className="flex flex-col items-center justify-center bg-gray-50 min-h-screen">
-                <h1 className="text-center font-medium text-4xl bg-gray-50">Đăng nhập</h1>
+                <h1 className="text-center font-medium text-4xl bg-gray-50">Log In</h1>
                 <p className="text-[#52525B] font-poppins text-[18px] font-normal leading-[30px] text-center mt-5 mb-8 max-w-md mx-auto">
                     QuizForge – Nền tảng sáng tạo bài kiểm tra trực tuyến, giúp bạn dễ dàng thiết kế, chia sẻ và thực hiện các bài kiểm tra một cách nhanh chóng và hiệu quả!
                 </p>

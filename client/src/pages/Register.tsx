@@ -79,14 +79,14 @@ const Register = () => {
         } catch (err) {
 
             console.error("Register error:", err);
-            setErrors({ general: "Failed to register." });
+            setErrors({ general: "Failed to register!!" });
         }
     };
 
     return (
         <div className="bg-gray-50">
             {loading && <LoadingProcess />}
-            <h1 className="text-center font-medium text-4xl pt-5">Đăng ký</h1>
+            <h1 className="text-center font-medium text-4xl pt-5">Register</h1>
 
             <p className="text-[#52525B] font-poppins text-[18px] font-normal leading-[30px] text-center mt-5 mb-8 max-w-md mx-auto">
                 QuizForge – Nền tảng sáng tạo bài kiểm tra trực tuyến, giúp bạn dễ dàng thiết kế, chia sẻ và thực hiện các bài kiểm tra một cách nhanh chóng và hiệu quả!

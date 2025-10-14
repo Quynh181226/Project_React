@@ -6,6 +6,7 @@ import ModalAddEditQues from "./ModalAddEditQues";
 import ModalDeleteQues from "./ModalDeleteQues";
 import { Button } from "antd";
 import Pagination1 from "./Pagination1.tsx";
+import LoadingProcess from "./LoadingProcess.tsx";
 
 interface TableQuesProps {
     testId: number;
@@ -18,7 +19,7 @@ const TableQues = ({ testId, onEdit, onDelete, questions: questionsFromProp }: T
     const dispatch = useAppDispatch();
     const { list, status, error } = useAppSelector(state => state.ques);
 
-    const effectiveList = questionsFromProp || list;
+    const quesList = questionsFromProp || list;
     const quesStatus = questionsFromProp ? "success" : status;
     const quesError = questionsFromProp ? null : error;
 
@@ -31,17 +32,16 @@ const TableQues = ({ testId, onEdit, onDelete, questions: questionsFromProp }: T
     const [currPage, setCurrPage] = useState(1);
     const perPage=2;
 
-    // Load danh sách câu hỏi khi testId thay đổi
     useEffect(() => {
         if (!questionsFromProp && testId !== 0) {
             dispatch(getAllQues(testId));
         }
     }, [dispatch, testId, questionsFromProp]);
 
-    const totalPages=Math.ceil(effectiveList.length / perPage);
+    const totalPages=Math.ceil(quesList.length / perPage);
     const start=(currPage-1)*perPage;
     const end=start+perPage;
-    const pagi=effectiveList.slice(start,end);
+    const pagi=quesList.slice(start,end);
 
     const handleEdit = (ques: Question) => {
         setEditQues(ques);
@@ -68,8 +68,15 @@ const TableQues = ({ testId, onEdit, onDelete, questions: questionsFromProp }: T
         setModalDeleteOpen(false);
     };
 
-    // Loading/Error
-    if (quesStatus === "pending") return <p>Loading...</p>;
+    if (status === "pending") return <LoadingProcess/>;
+
+
+
+
+
+
+
+
     if (quesStatus === "failed") return <p className="text-red-600">{quesError}</p>;
 
     return (
@@ -94,13 +101,13 @@ const TableQues = ({ testId, onEdit, onDelete, questions: questionsFromProp }: T
                         <td className="px-4 py-2 border border-[#DEE2E6]">{q.question}</td>
                         <td className="px-4 py-2 text-center border border-[#DEE2E6]">
                             <div className="flex justify-center gap-2">
-                                <Button
+                                <Button type="primary"
                                     className="!bg-yellow-400 !text-black hover:!bg-yellow-500"
                                     onClick={() => handleEdit(q)}
                                 >
                                     Sửa
                                 </Button>
-                                <Button
+                                <Button type="primary"
                                     className="!bg-red-600 !text-white hover:!bg-red-700"
                                     onClick={() => handleDeleteClick(q)}
                                 >
@@ -110,25 +117,24 @@ const TableQues = ({ testId, onEdit, onDelete, questions: questionsFromProp }: T
                         </td>
                     </tr>
                 ))}
-                {effectiveList.length === 0 && (
+                {quesList.length === 0 && (
                     <tr>
                         <td colSpan={3} className="text-center px-4 py-2 border">
-                            Chưa có câu hỏi nào
+                            No questions yet
                         </td>
                     </tr>
                 )}
                 </tbody>
             </table>
 
-            {/* Modal thêm/sửa câu hỏi */}
             {modalAddEditOpen && (
                 <ModalAddEditQues
                     open={modalAddEditOpen}
                     onClose={() => setModalAddEditOpen(false)}
                     testData={{
                         id: testId,
-                        questionsDetail: effectiveList,
-                        questionCount: effectiveList.length,
+                        quesDetail: quesList,
+                        quesCnt: quesList.length,
                         title: "",
                         categoryId: 0,
                         duration: 0,
@@ -140,16 +146,8 @@ const TableQues = ({ testId, onEdit, onDelete, questions: questionsFromProp }: T
                 />
             )}
 
-            {/* Modal xóa câu hỏi */}
             {modalDeleteOpen && (
-                <ModalDeleteQues
-                    open={modalDeleteOpen}
-                    onClose={() => setModalDeleteOpen(false)}
-                    ques={selectedQues}
-                    testId={testId}
-                    onDeleted={handleDeletedQues}
-                    customHandleDelete={onDelete}
-                />
+                <ModalDeleteQues open={modalDeleteOpen} onClose={() => setModalDeleteOpen(false)} ques={selectedQues} testId={testId} onDeleted={handleDeletedQues} customHandleDelete={onDelete}/>
             )}
 
             {totalPages > 1 &&
