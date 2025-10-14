@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import QuizList from "../components/QuizList";
 import SortContainer from "../components/SortContainer";
-import Footer from "../components/Footer";
+// import Footer1 from "../components/Footer1";
 import { type Quiz } from "../types/type";
 import HandleLogout from "../components/handleLogout.tsx";
 import { useAppDispatch, useAppSelector } from "../hooks/Hook.ts";
@@ -119,7 +119,16 @@ const Dashboard = () => {
             {totalPages > 1 &&
                 <Pagination currPage={currPage} totalPages={totalPages} onChangePage={handlePageChange} />
             }
-            <Footer />
+
+            {search.trim() === "" ? (
+                <div className="flex-shrink-0 bg-gray-800 text-white text-center w-full !p-3">
+                    <p>&copy; 2025 Quiz App. All rights reserved.</p>
+                </div>
+            ) : (
+                <footer className="flex-shrink-0 bg-gray-800 text-white text-center w-full !p-3">
+                    <p>&copy; 2025 Quiz App. All rights reserved.</p>
+                </footer>
+            )}
         </div>
     );
 };
