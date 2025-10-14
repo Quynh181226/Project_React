@@ -14,7 +14,6 @@ const CategoriesSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
-            // Lấy tất cả categories
             .addCase(getAllCategories.pending, (state) => {
                 state.loading = true;
                 state.error = null;
@@ -31,12 +30,10 @@ const CategoriesSlice = createSlice({
                 state.error = action.error.message || "Failed to fetch categories";
             })
 
-            // Thêm category
             .addCase(addCategory.fulfilled, (state, action: PayloadAction<Category>) => {
                 state.categories.push(action.payload);
             })
 
-            // Sửa category
             .addCase(editCategory.fulfilled, (state, action: PayloadAction<Category>) => {
                 const index = state.categories.findIndex(
                     (c) => c.id === action.payload.id
@@ -44,7 +41,6 @@ const CategoriesSlice = createSlice({
                 if (index !== -1) state.categories[index] = action.payload;
             })
 
-            // Xóa category
             .addCase(deleteCategory.fulfilled, (state, action: PayloadAction<number>) => {
                 state.categories = state.categories.filter(
                     (c) => c.id !== action.payload
