@@ -20,7 +20,7 @@ const ModalAddEditCategory = ({ open, onClose, category, code }: ModalProps) => 
     const [image, setImage] = useState<string>(category?.image ?? "");
     const [file, setFile] = useState<File | null>(null);
     const [displayFileName, setDisplayFileName] = useState<string | null>(null);
-    // const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
@@ -71,13 +71,13 @@ const ModalAddEditCategory = ({ open, onClose, category, code }: ModalProps) => 
             return;
         }
 
-        // setLoading(true);
+        setLoading(true);
         setError(null);
 
         const imageUrl = await uploadToCloudinary();
         // !imageUrl.trim()
         if (!imageUrl) {
-            // setLoading(false);
+            setLoading(false);
             setError("Cate image not empty");
             return;
         }
@@ -113,7 +113,7 @@ const ModalAddEditCategory = ({ open, onClose, category, code }: ModalProps) => 
                 <Button
                     key="save"
                     type="primary"
-                    // loading={loading}
+                    loading={loading}
                     onClick={handleSubmit}
                 >
                     Save
