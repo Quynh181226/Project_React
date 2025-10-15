@@ -34,83 +34,40 @@ Axios là một HTTP client được viết dựa trên Promises được dùng 
 6. Hủy requests
 7. Tự động chuyển đổi về dữ liệu JSON
 8. Hỗ trợ phía client để chống lại XSRF
+
+
+1. baseURL: nếu bạn chỉ định một base URL, nó sẽ được đính vào trước bất cứ một URL tương đối nào mà bạn sử dụng.
+2. headers: một object gồm các cặp key/value có thể gửi trong header của request.
+3. params: một object gồm các cặp key/value mà sẽ được serialize và đính vào URL dưới dạng một query string.
+
 ---
 ##  Vấn đề: JSX sinh ra kiểu gì?
-
-
 ```tsx
 <div>Hello</div>
 ```
 
-
-thì **TypeScript** hiểu đây là **một phần tử React**.
+=> Thì **TypeScript** hiểu đây là **một phần tử React**.
 Kiểu dữ liệu thật của nó là:
-
 
 ```ts
 JSX.Element
 ```
 
 
----
+###  `Element` vs `JSX.Element` khác nhau chỗ nào?
 
-
-##  `Element` vs `JSX.Element` khác nhau chỗ nào?
-
-
-| Kiểu          | Nguồn gốc               | Dùng ở đâu                       | Mô tả                                                                           |
-| ------------- | ----------------------- | -------------------------------- | ------------------------------------------------------------------------------- |
-| `Element`     | DOM API của trình duyệt | TypeScript / JavaScript gốc      | Là **phần tử HTML thật** trong DOM (kiểu như `HTMLElement`, `SVGElement`, v.v.) |
-| `JSX.Element` | React định nghĩa        | React / TypeScript (JSX context) | Là **phần tử React** được tạo khi bạn viết `<div>...</div>`                     |
-
+| Kiểu          | Nguồn gốc                | Dùng ở đâu                       | Mô tả                                                                           |
+| ------------- |--------------------------| -------------------------------- | ------------------------------------------------------------------------------- |
+| `Element`     | DOM API của trình duyệt **"DOM type"** | TypeScript / JavaScript gốc      | Là **phần tử HTML thật** trong DOM (kiểu như `HTMLElement`, `SVGElement`, v.v.) |
+| `JSX.Element` | React định nghĩa         | React / TypeScript (JSX context) | Là **phần tử React** được tạo khi bạn viết `<div>...</div>`                     |
 
 ---
-
-
-##  Ví dụ dễ nhầm lẫn
-
-
-```ts
-let a: Element = <div>Hi</div>; //  Sai
-let b: JSX.Element = <div>Hi</div>; //  Đúng
-```
-
-
-Vì `<div>Hi</div>` không phải là phần tử DOM, nó là **một React element** (chưa render ra DOM).
-
-
----
-
-
-##  3 Kết luận
-
-
-```ts
-categoryDisplay: string | JSX.Element
-```
-
-
-→ Đây là **đúng nhất** vì bạn dùng React JSX trong component.
-Không bao giờ nên dùng `Element` ở đây, vì đó là **DOM type**, không liên quan React.
-
-
----
-
-
-##  Bonus (nếu muốn chấp nhận nhiều loại React node hơn)
-
 
 Nếu bạn muốn linh hoạt hơn, thay vì chỉ `JSX.Element`, có thể dùng:
-
-
 ```ts
 categoryDisplay: React.ReactNode
 ```
-
-
 Vì `React.ReactNode` bao gồm:
-
-
 * `JSX.Element`
 * `string`
 * `number`
@@ -120,83 +77,93 @@ Vì `React.ReactNode` bao gồm:
 * `React.Fragment`
 * mảng các phần tử React,...
 
-
 Đây là kiểu được dùng **chuẩn nhất trong React**, ví dụ trong props `children`.
 
+### 🔹 Tóm lại:
+
+| Mục đích                           | Nên dùng kiểu   |
+| ---------------------------------- | --------------- |
+| Chỉ nhận JSX                       | `JSX.Element`   |
+| Nhận cả text / fragment / mảng JSX |`React.ReactNode`|
+| Không dùng trong React             | `Element`       |
+
+---
+Để trả lời câu hỏi của bạn một cách rõ ràng, mình sẽ giải thích từng phần một:
 
 ---
 
+### 1. **DOM là gì?**
 
-## 🔹 Tóm lại:
+**DOM (Document Object Model)** là một **mô hình dữ liệu dạng cây** đại diện cho cấu trúc của một trang web (HTML, XML).
 
+* Mỗi **thẻ HTML** trở thành một **node** trong cây DOM.
+* JavaScript có thể tương tác với DOM để **thay đổi nội dung, cấu trúc, hay style** của trang web **mà không cần reload trang**.
 
-| Mục đích                           | Nên dùng kiểu        |
-| ---------------------------------- | -------------------- |
-| Chỉ nhận JSX                       | `JSX.Element` ✅      |
-| Nhận cả text / fragment / mảng JSX | `React.ReactNode` ✅✅ |
-| Không dùng trong React             | `Element` ❌          |
+Ví dụ:
 
+```html
+<div id="root">
+  <h1>Hello World</h1>
+</div>
+```
+
+Trong DOM, `div#root` là node cha, `h1` là node con.
+
+### 2. **DOM trong React**
+
+React sử dụng **Virtual DOM (DOM ảo)** chứ không thao tác trực tiếp lên **real DOM**.
+
+* **Virtual DOM:** là một bản sao nhẹ của DOM thực tế, nằm trong bộ nhớ.
+* React **so sánh** Virtual DOM với DOM trước đó để tìm ra **những thay đổi cần thiết** (diffing algorithm).
+* Sau đó, React **cập nhật chỉ những phần thay đổi** trên DOM thực tế, thay vì render lại toàn bộ trang.
+
+Ví dụ:
+
+```jsx
+const [count, setCount] = React.useState(0);
+
+return (
+  <div>
+    <p>{count}</p>
+    <button onClick={() => setCount(count + 1)}>Tăng</button>
+  </div>
+);
+```
+
+Khi `count` thay đổi, React:
+
+1. Cập nhật Virtual DOM.
+2. So sánh với Virtual DOM cũ.
+3. Chỉ update `<p>` trong DOM thật, không render lại `<button>`.
+
+### 3. **Tại sao phải có DOM (và Virtual DOM)?**
+
+* **DOM thực sự**: cần để trình duyệt hiển thị nội dung và cấu trúc web.
+* **Virtual DOM trong React**:
+
+    * **Hiệu suất:** giảm số lần thao tác trực tiếp với DOM, tránh re-render toàn bộ trang.
+    * **Dễ quản lý state:** React tự động cập nhật giao diện dựa trên dữ liệu (`state`/`props`).
+    * **Code gọn gàng hơn:** bạn chỉ định giao diện mong muốn, React lo phần tối ưu update.
+
+### 4. **Tóm tắt**
+
+| Khái niệm   | Vai trò chính                                                         |
+| ----------- | --------------------------------------------------------------------- |
+| DOM thực tế | Hiển thị trang web, cho phép JS thao tác trực tiếp.                   |
+| Virtual DOM | Bản sao DOM trong React để tối ưu cập nhật giao diện.                 |
+| Tại sao cần | Giúp render nhanh, tránh thao tác DOM tốn kém, quản lý state dễ dàng. |
 
 ---
-
-
-
-
----
-
 
 ### 🔹 1. `slice(start, end)` hoạt động theo quy tắc **“lấy từ start đến trước end”**
-
 
 * `start`: vị trí bắt đầu (tính từ 0)
 * `end`: **vị trí dừng**, nhưng **không bao gồm** phần tử ở vị trí đó
   → nên **không cần trừ 1**, vì nó **tự dừng trước end** rồi.
 
-
 ---
-
-
-### 🔹 2. Vì sao `start` phải trừ 1 trong công thức `(currentPage - 1) * perPage`?
-
-
-Vì **trang 1** cần bắt đầu từ phần tử **vị trí 0**, không phải 5.
-Nếu không trừ 1 → trang 1 sẽ bắt đầu từ vị trí 5 (tức là bỏ qua 5 phần tử đầu tiên 😅)
-
-
----
-
-
-### 💡 Ví dụ dễ hiểu:
-
-
-Giả sử có 10 phần tử, mỗi trang 5 phần tử.
-
-
-| Trang | start = (page - 1) * 5 | end = page * 5 | slice(start, end) | Kết quả         |
-| ----- | ---------------------- | -------------- | ----------------- | --------------- |
-| 1     | (1 − 1)*5 = **0**      | 1*5 = **5**    | slice(0,5)        | lấy phần tử 0→4 |
-| 2     | (2 − 1)*5 = **5**      | 2*5 = **10**   | slice(5,10)       | lấy phần tử 5→9 |
-
-
-
----
-
-
-👉 **Tóm lại:**
-
-
-* `end` **không trừ 1** vì `slice` tự hiểu là “lấy trước end”.
-* `start` cần `(page - 1)` để trang đầu tiên bắt đầu từ **0** (phần tử đầu tiên).
-
-
-
-
-
-
-
 
 ### 1. `<Link>` trong React Router
-
 
 * `<Link>` là component của **react-router-dom**, thay thế cho `<a>`.
 * Ví dụ:
