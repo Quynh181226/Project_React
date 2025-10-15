@@ -180,10 +180,7 @@ Khi `count` thay đổi, React:
 
 
 ---
-
-
 ### 2. `useNavigate` trong React Router
-
 
 * Dùng khi bạn muốn **chuyển trang bằng code** (không cần người dùng click).
 * Ví dụ: sau khi đăng ký thành công thì tự động chuyển sang trang login:
@@ -220,9 +217,6 @@ Khi `count` thay đổi, React:
 
 
 
-
-
-
 const tests = [{id: 1}, {id: 2}, {id: 3}];
 console.log(tests.length);      // 3
 console.log(tests[tests.length - 1]); // tests[2] → {id: 3}
@@ -230,121 +224,32 @@ console.log(tests[tests.length - 1]); // tests[2] → {id: 3}
 
 => phần tử cuối cùng
 
-
-
-
 3️⃣ Luồng sử dụng điển hình
 
 
 Người dùng click vào “Sửa” một bài test.
 
+- Dispatch:  dispatch(setSelectedTest(test));
 
-Dispatch:
-
-
-dispatch(setSelectedTest(test));
-
-
-
-
-Redux slice lưu bài test vào state.selectedTest.
-
+- Redux slice lưu bài test vào state.selectedTest.
 
 Component SectionAddTest hoặc TableQues sẽ lấy selectedTest từ store:
 
-
 const selectedTest = useAppSelector((state) => state.tests.selectedTest);
-
-
-
 
 Nếu selectedTest tồn tại, UI sẽ render thông tin bài test + bảng câu hỏi.
 
 
 Nói cách khác, reducer này chỉ để cập nhật bài test đang được thao tác trong store, rất tiện để nhiều component dùng chung dữ liệu này mà không cần truyền prop đi vòng vèo.
 
-
-
-
-
-
-
-
-
-
-Mục đích của hàm handleChangeAnswer
-
+- Mục đích của hàm handleChangeAnswer
 
 Trong modal thêm/sửa câu hỏi, mỗi câu hỏi có nhiều đáp án (answers).
-
 
 Khi người dùng gõ text mới cho một đáp án, chúng ta cần cập nhật state answers tương ứng.
 
 
 Hàm này làm đúng điều đó: thay đổi text của một đáp án mà không ảnh hưởng các đáp án khác.
-
-
-Code hàm
-const handleChangeAnswer = (id: number, text: string) => {
-setAnswers(
-answers.map((a) =>
-a.id === id ? { ...a, text } : a
-)
-);
-};
-
-
-
-
-answers.map(...) → tạo một mảng mới dựa trên mảng cũ (immutable update).
-
-
-a.id === id ? { ...a, text } : a → nếu đáp án trùng id → tạo object mới với text mới, còn lại giữ nguyên.
-
-
-setAnswers(...) → cập nhật state để render lại UI với giá trị mới.
-
-
-Ví dụ minh họa
-
-
-Giả sử state hiện tại:
-
-
-answers = [
-{ id: 1, text: "Đáp án A", correct: false },
-{ id: 2, text: "Đáp án B", correct: true },
-];
-
-
-
-
-Gọi:
-
-
-handleChangeAnswer(1, "Đáp án A mới");
-
-
-
-
-Kết quả answers sẽ trở thành:
-
-
-[
-{ id: 1, text: "Đáp án A mới", correct: false }, // text được cập nhật
-{ id: 2, text: "Đáp án B", correct: true },      // giữ nguyên
-]
-
-
-
-
-Tác dụng: đảm bảo chỉ thay đổi đúng đáp án cần sửa, không làm mất các dữ liệu khác.
-
-
-
-
-
-
 
 
 NGUỒN LOGIN:
