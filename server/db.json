@@ -13,14 +13,16 @@
       "email": "quynhph@gmail.com",
       "password": "user1234",
       "role": "user"
+    },
+    {
+      "id": 1760513518305,
+      "fullName": "Test",
+      "email": "test@g.com",
+      "password": "147147147",
+      "role": "user"
     }
   ],
   "categories": [
-    {
-      "id": 2,
-      "name": "House",
-      "image": "https://res.cloudinary.com/dtxlzevgb/image/upload/v1760032678/qahggz3lqzjlbgssnd3e.svg"
-    },
     {
       "id": 3,
       "name": "Science",
@@ -74,9 +76,10 @@
   ],
   "tests": [
     {
+      "id": 4,
       "title": "IELTS Practice Test 1",
       "categoryId": 7,
-      "duration": 30,
+      "duration": 120,
       "quesCnt": 5,
       "quesDetail": [
         {
@@ -210,8 +213,7 @@
           ]
         }
       ],
-      "plays": 2,
-      "id": 4
+      "plays": 3
     },
     {
       "title": "TOEIC Practice Test 1",
@@ -2742,6 +2744,89 @@
         }
       ],
       "plays": 0
+    },
+    {
+      "title": "222q",
+      "categoryId": 10,
+      "duration": 12,
+      "quesCnt": 1,
+      "quesDetail": [
+        {
+          "id": 1,
+          "question": "1112",
+          "answers": [
+            {
+              "id": 1,
+              "text": "111",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "11",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "e3rrr",
+              "correct": true
+            }
+          ]
+        }
+      ],
+      "plays": 0,
+      "id": 13
+    },
+    {
+      "title": "BBBBBB",
+      "categoryId": 9,
+      "duration": 12,
+      "quesCnt": 1,
+      "quesDetail": [
+        {
+          "id": 1,
+          "question": "ssss",
+          "answers": [
+            {
+              "id": 1,
+              "text": "sss",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "ss",
+              "correct": false
+            }
+          ]
+        }
+      ],
+      "plays": 0,
+      "id": 14
+    },
+    {
+      "title": "\tIELTS Practice Test 1",
+      "categoryId": 5,
+      "duration": 120,
+      "quesCnt": 1,
+      "quesDetail": [
+        {
+          "id": 1,
+          "question": "qq",
+          "answers": [
+            {
+              "id": 1,
+              "text": "ssss",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "sss",
+              "correct": false
+            }
+          ]
+        }
+      ],
+      "plays": 0,
+      "id": 15
     }
   ],
   "quizzes": [
@@ -2752,14 +2837,6 @@
       "title": "General Knowledge",
       "ques": 16,
       "plays": 100
-    },
-    {
-      "id": 2,
-      "image": "/assets/Image.svg",
-      "categoryId": 2,
-      "title": "Science Trivia",
-      "ques": 12,
-      "plays": 150
     },
     {
       "id": 3,
